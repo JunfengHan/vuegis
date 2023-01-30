@@ -24,6 +24,7 @@ import Header from './header/index.vue'
 <style lang="less" scoped>
 .container {
     .header {
+      background-color: yellowgreen;
     }
 }
 </style>

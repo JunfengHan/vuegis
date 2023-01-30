@@ -1,19 +1,24 @@
 <template>
-    <div class="base-header">
-      header
-    </div>
-  </template>
+  <div class="header-container">
+    <div @click="backToHome">logo</div>
+    <Menu></Menu>
+  </div>
+</template>
 
-  <script lang="ts" setup>
-  import { computed } from "vue";
-  import { useUserStore } from '@/store'
+<script lang="ts" setup>
+import Menu from "../menu/index.vue";
+import { useRouter } from 'vue-router';
 
-  const userStore = useUserStore()
-  const userinfo = computed(() => userStore.userInfo)
+const router = useRouter();
 
+const backToHome = () => {
+  router.push('/home');
+}
 
-  </script>
+</script>
 
-  <style lang="less">
-  
-  </style>
+<style lang="less">
+.header-container {
+  display: flex;
+}
+</style>

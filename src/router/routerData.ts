@@ -1,49 +1,77 @@
 export const Layout = () => import('@/layouts/index.vue');
-// export const Layout = () => import('./test.vue');
 
 export const menuRouterData = [
     {
         path: '/svg',
-        name: 'svg',
-        redirect: '/svg/index',
+        name: '/svg',
+        redirect: '/svg',
         component: Layout,
-        meta: { title: '心跳状态查询' },
+        meta: { title: 'SVG' },
         icon: true,
         children: [
             {
                 path: 'index',
-                name: 'Svg',
-                meta: { title: '心跳状态查询' },
+                name: '/svg/index',
+                meta: { title: 'svg' },
                 component: () => import('@/pages/svg/index.vue'),
             }
         ]
     },
     {
         path: '/canvas',
-        name: 'canvas',
+        name: '/canvas',
         redirect: '/canvas',
         component: Layout,
-        meta: { title: '耗时埋点查询' },
+        meta: { title: 'canvas' },
         icon: true,
         children: [
             {
                 path: 'index',
-                name: 'Canvas',
-                meta: { title: '耗时埋点查询' },
+                name: '/canvas/index',
+                meta: { title: 'canvas' },
                 component: () => import('@/pages/canvas/index.vue'),
             }
         ]
     },
-    
+    {
+        path: '/webgl',
+        name: '/webgl',
+        redirect: '/webgl/2d',
+        component: Layout,
+        meta: { title: 'WebGL' },
+        icon: true,
+        children: [
+            {
+                path: '2d',
+                name: '/webgl/2d',
+                meta: { title: 'WebGL 2D' },
+                component: () => import('@/pages/webgl/2d.vue'),
+            },
+            {
+                path: '3d',
+                name: '/webgl/3d',
+                meta: { title: 'WebGL 3D' },
+                component: () => import('@/pages/webgl/3d.vue'),
+            }
+        ]
+    },
 ]
 
 export const routerData = [
     {
         path: '/',
-        name: 'Root',
-        // redirect: '/functionQuery/U_Cmap/timeStatic',
+        name: '/home',
+        redirect: '/home',
         component: Layout,
-        meta: { title: '首页' }
+        meta: { title: '首页' },
+        children: [
+            {
+                path: 'home',
+                name: '/home',
+                meta: { title: 'home' },
+                component: () => import('@/pages/index.vue'),
+            }
+        ]
     },
     ...menuRouterData,
 ]
