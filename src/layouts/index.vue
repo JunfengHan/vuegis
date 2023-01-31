@@ -23,8 +23,11 @@ import Header from './header/index.vue'
 
 <style lang="less" scoped>
 .container {
+  .el-header {
+    padding: 0;
+  }
   .header {
-    background-color: yellowgreen;
+  background: #545c64;
   }
   .main {
     height: calc(100vh - 60px);
