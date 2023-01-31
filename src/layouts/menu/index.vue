@@ -22,14 +22,9 @@
   const router = useRouter()
   const storeRouterPath = useRouterPath();
   
-//   const handleSelect = (key: string, keyPath: string[]) => {
-//     console.log(key, keyPath)
-//     storeRouterPath.setActivePath(key);
-//   }
   // 动态设置激活的路由，刷新页面保持menu激活状态和路由一致
   onMounted(() => {
-    let activeRouterName = router.currentRoute.value?.path?.split('/index')[0];
-    console.log('router:', activeRouterName);
+    let activeRouterName = router.currentRoute.value?.path;
     storeRouterPath.setActivePath(activeRouterName);
   })
 </script>

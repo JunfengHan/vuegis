@@ -6,8 +6,8 @@
             (!onlyOneChild.children || onlyOneChild.noShowingChildren) &&
             (!item.meta || !item.meta.alwaysShow)
         ">
-            <el-menu-item :index="resolvePath(onlyOneChild.name)" :class="{ 'submenu-title-noDropdown': !isNest }"
-                @click="clickEvent(onlyOneChild.name, item.name)">
+            <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{ 'submenu-title-noDropdown': !isNest }"
+                @click="clickEvent(onlyOneChild.path)">
                 <template #title>
                     {{ onlyOneChild.meta.title }}
                 </template>
@@ -22,7 +22,7 @@
             </template>
 
             <menu-item v-for="child in item.children" :key="child.path" :item="child" :is-nest="true"
-                :base-path="resolvePath(child.path)" class="nest-menu" />
+                :base-path="resolvePath(child.path)" />
         </el-sub-menu>
     </template>
 </template>
@@ -83,9 +83,7 @@ function resolvePath(routePath: string) {
     return path.resolve(props.basePath, routePath);
 }
 let router = useRouter();
-function clickEvent(onlyOneChildPath: any, name: String) {
-    console.log('name:', name);
-    store.setActivePath(name);
+function clickEvent(onlyOneChildPath: any) {
     router.push(resolvePath(onlyOneChildPath));
 }
 
