@@ -23,8 +23,16 @@ import Header from './header/index.vue'
 
 <style lang="less" scoped>
 .container {
-    .header {
-      background-color: yellowgreen;
-    }
+  .header {
+    background-color: yellowgreen;
+  }
+  .main {
+    height: calc(100vh - 60px);
+    padding: 0px;
+
+  }
+  .mapboxgl-control-container {
+    display: none !important;
+  }
 }
 </style>
