@@ -13,7 +13,8 @@ onMounted(() => {
         container: 'map', // container ID
         center: [-122.420679, 37.772537], // starting position [lng, lat]
         zoom: 13, // starting zoom
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL or style object
+        style: 'mapbox://styles/legend1122/cldlbuu5i000p01mw01eohmmm', // style URL or style object
+        // mapbox://styles/legend1122/cldlbuu5i000p01mw01eohmmm
         hash: true, // sync `center`, `zoom`, `pitch`, and `bearing` with URL
     });
 });
