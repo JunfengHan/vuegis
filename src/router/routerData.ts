@@ -2,56 +2,90 @@ export const Layout = () => import('@/layouts/index.vue');
 
 export const menuRouterData = [
     {
-        path: '/svg',
-        name: '/svg',
-        redirect: '/svg',
+        path: '/gis',
+        name: 'gis',
         component: Layout,
-        meta: { title: 'SVG' },
+        meta: { title: 'GIS' },
         icon: true,
         children: [
             {
                 path: 'index',
-                name: '/svg/index',
+                name: 'gis',
+                meta: { title: 'Gis' },
+                component: () => import('@/pages/gis/index.vue'),
+            },
+        ]
+    },
+    {
+        path: '/example',
+        name: 'example',
+        component: Layout,
+        meta: { title: '案例' },
+        icon: true,
+        children: [
+            {
+                path: 'index',
+                name: 'example',
+                meta: { title: '案例' },
+                component: () => import('@/pages/example/index.vue'),
+            },
+            {
+                path: 'd3Base',
+                meta: { title: '案例', hidden: true},
+                component: () => import('@/pages/example/d3/d3Base.vue'),
+            },
+            {
+                path: 'threeBase',
+                meta: { title: '案例', hidden: true},
+                component: () => import('@/pages/example/three/threeBase.vue'),
+            },
+        ]
+    },
+    {
+        path: '/visual',
+        name: 'visual',
+        component: Layout,
+        meta: { title: 'VISUAL' },
+        icon: true,
+        children: [
+            {
+                path: 'webgl',
+                name: 'webgl',
+                meta: { title: 'webgl' },
+                component: () => import('@/pages/webgl/index.vue'),
+            },
+            {
+                path: 'canvas',
+                name: 'canvas',
+                meta: { title: 'canvas' },
+                component: () => import('@/pages/canvas/index.vue'),
+            },
+            {
+                path: 'svg',
+                name: 'svg',
                 meta: { title: 'svg' },
                 component: () => import('@/pages/svg/index.vue'),
             }
         ]
     },
     {
-        path: '/canvas',
-        name: '/canvas',
-        redirect: '/canvas',
+        path: '/visualLibs',
+        name: 'visualLibs',
         component: Layout,
-        meta: { title: 'canvas' },
+        meta: { title: '可视化工具' },
         icon: true,
         children: [
             {
-                path: 'index',
-                name: '/canvas/index',
-                meta: { title: 'canvas' },
-                component: () => import('@/pages/canvas/index.vue'),
-            }
-        ]
-    },
-    {
-        path: '/webgl',
-        name: '/webgl',
-        redirect: '/webgl/2d',
-        component: Layout,
-        meta: { title: 'WebGL' },
-        icon: true,
-        children: [
-            {
-                path: '2d',
-                name: '/webgl/2d',
-                meta: { title: 'WebGL 2D' },
-                component: () => import('@/pages/webgl/2d.vue'),
+                path: 'd3',
+                name: 'd3',
+                meta: { title: 'D3' },
+                component: () => import('@/pages/d3js/index.vue'),
             },
             {
-                path: '3d',
-                name: '/webgl/3d',
-                meta: { title: 'WebGL 3D' },
-                component: () => import('@/pages/webgl/3d.vue'),
+                path: 'three',
+                name: 'three',
+                meta: { title: 'Three.js' },
+                component: () => import('@/pages/threejs/index.vue'),
             }
         ]
     },

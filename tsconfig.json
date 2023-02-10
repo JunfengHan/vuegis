@@ -17,6 +17,7 @@
       "@/*": ["./src/*"],
     },
     "types": ["element-plus/global"],
+    "noImplicitThis": true,
   },
   "include": ["env.d.ts", "src/**/*", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "extends": "@vue/tsconfig/tsconfig.web.json",

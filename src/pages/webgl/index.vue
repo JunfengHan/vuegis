@@ -1,12 +1,9 @@
 <template>
-    <div>Home</div>
+  <div>WebGL</div>
 </template>
 
 <script lang="ts" setup>
 
 </script>
 
-<style lang="less" scoped>
-
-</style>
-  
+<style lang="less" scoped></style>
